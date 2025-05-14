@@ -50,36 +50,35 @@ html{
 /* home container styling   */
 .Home-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 500px;
     padding-top: 80px;
 }
-h3  {
+.main-title {
     color: #FBFBFB;
     margin-left: 50px;
+    font-size: 30px;
 }
 h2{
     color: FBFBFB;
     margin-left: 50px;
-    color: #35858B;
+    font-size: 33px;
+    color: rgb(37, 200, 200);;
 }
+ .web-title{
+    font-size: 30px;
+    color: white;
+ }
  
-p {
-    font-size: 20px;
-    color: #EDDFE0;
-    margin-left: 50px;
-    max-width: 600px;
-}
-
-button {
+.res-button {
     padding: 10px 20px;
     font-size: 1.1rem;
     font-weight: 400;
     background: linear-gradient(#35858B 50%, #4FBDBA 100%);
     background-color: #35858B;
     border-radius: 2rem;
-    margin-left: 50px;
+    margin-left: 115px;
     border: none;
     cursor: pointer;
 }
@@ -131,6 +130,7 @@ h4 {
 .info{
     margin-bottom: 60px;
     margin-left: 30px;
+    color: white;
 }
 .about-info{
     color:black;
@@ -235,9 +235,10 @@ img {
 }
 .contact-info {
     font-size: 18px;
+    gap: 10px;
 }
 .contact-info i  {
-    margin-right: 10px;
+    margin-right: 20px;
     color: white;
 }
  .email{
@@ -252,3 +253,7 @@ img {
     text-decoration: none;
     color: white;
  } 
+  .footer{
+    font-size: 30px;
+     margin-left: 40px;
+  }
