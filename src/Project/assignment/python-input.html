@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Even or Odd Checker</title>
+  <link rel="stylesheet" href="/src/Project/css/assignment.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1> Check leep year in python programing language</h1>
+
+    <!-- Row 1: Terminal Input Code + Output -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Code (Terminal Input)</h2>
+        <div class="code-box">
+          <code>
+            year = int(input("Enter a year: "))  # User input
+
+            if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+                print(f"{year} is a leap year.")
+            else:
+                print(f"{year} is not a leap year.")             
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Output</h2>
+        <div class="input-output">Enter a year: 2024
+          2024 is a leap year.</div>
+      </div>
+    </div>
+
+    <!-- Row 2: Assigned Value Code + Output -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Code (Assigned Value)</h2>
+        <div class="code-box">
+          <code>
+            year = 2024  # Assigned value
+
+            if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+                print(f"{year} is a leap year.")
+            else:
+                print(f"{year} is not a leap year.")
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Output</h2>
+        <div class="input-output">2024 is a leap year.</div>
+      </div>
+    </div>
+
+    <!-- Home Button -->
+    <div class="btn-wrap">
+      <a class="btn" href="./Assignment.html">Home</a>
+    </div>
+  </div>
+</body>
+
+</html>
