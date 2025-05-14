@@ -5,41 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- css link -->
     <link rel="stylesheet" href="./src/Project/css/index.css">
 </head>
- 
 
-<body> 
+
+<body>
     <div class="main-container">
         <!-- first row -->
-        <div class="header"> 
-            <b class="file-name">Portfolio</b> 
+        <div class="header">
+            <b class="file-name">Portfolio</b>
             <a class="navbar" href="#Home">Home</a>
             <a class="navbar" href="#About">About</a>
             <a class="navbar" href="#Project">Project</a>
             <a class="navbar" href="#Contact">Contact</a>
-     
+
         </div>
-     
+
         <!-- second row -->
         <div class="Home-container" id="Home">
             <div class="second-row">
-                <h3>Hello, it's me</h3>
+                <h3 class="main-title">Hello, it's me</h3>
                 <h2>DIVYA BONDRE</h2>
-                <h3>And I'am <span>Full-Stack Developer</span></h3>
-                <br>
-                <p>I am a full stack developer, with a strong interest in
-                    front-end web Development.
-                </p>
+                <h3 class="web-title">And I'am <span style="color: rgb(37, 200, 200);">Full-Stack Developer</span></h3>
                 <br>
                 <br>
-                <br>
-                <button><a href="resume-two.html" class="CV-button">Download CV</a></button>
+                <button class="res-button"><a href="resume-two.html" class="CV-button">Download CV</a></button>
             </div>
 
             <!-- third row -->
@@ -53,7 +45,7 @@
                 <img src="./assets/Dev2.avif" class="about-logo">
             </div> -->
             <div class="about-info">
-                <b class="about-title">About Me</b>
+                <b class="about-title">About <span style="color: rgb(37, 200, 200);">Me</span></b>
                 <p class="info">
                     My name is Divya R Bondre, and I am a full-stack developer with a strong interest in front-end web
                     technologies. On the web development side, I've created interactive and responsive websites using
@@ -66,64 +58,75 @@
         </div>
         <!--Project-container  -->
         <div class="Projects-container" id="Project">
-            <b class="project-title">My Projects</b>
+            <b class="project-title">My <span style="color: rgb(37, 200, 200);">Projects</span></b>
             <div class="first-div">
                 <!-- html-project -->
-                 <a href="/src/Project/html/html-folder.html">
-                <div class="project-card">HTML
-                    <img class="project-img" src="/src/assets/image/icons8-html.png">
-                </div>
+                <a href="/src/Project/html/html-folder.html">
+                    <div class="project-card">HTML
+                        <img class="project-img" src="/src/assets/image/icons8-html.png">
+                    </div>
                 </a>
                 <!-- css-project -->
                 <a href="/src/Project/css/css-folder.html">
-                <div class="project-card">CSS
-                    <img class="project-img" src="/src/assets/image/icons8-css.png">   
-                </div>
+                    <div class="project-card">CSS
+                        <img class="project-img" src="/src/assets/image/icons8-css.png">
+                    </div>
                 </a>
                 <!-- javascript-project -->
                 <a href="./portfolio/projectfile/javascript-project.html">
-                <div class="project-card">JavaScript
-                    <img class="project-img" src="/src/assets/image/ icon8-java1.png">
-                </div>
+                    <div class="project-card">JavaScript
+                        <img class="project-img" src="/src/assets/image/ icon8-java1.png">
+                    </div>
                 </a>
             </div>
-            <br/>
+            <br />
             <div class="second-div">
                 <!-- bootstrap-project -->
                 <a href="./portfolio/projectfile/bootstrap-projects.html">
-                <div class="project-card">Bootstrap
-                    <img class="project-img" src="/src/assets/image/icons8-bootstrap1.png">
-                </div>
+                    <div class="project-card">Bootstrap
+                        <img class="project-img" src="/src/assets/image/icons8-bootstrap1.png">
+                    </div>
                 </a>
                 <!-- react-project -->
                 <a href="https://guileless-pavlova-7c3260.netlify.app/">
-                <div class="project-card">ReactJs
-                    <img class="project-img" src="/src/assets/image/icons8-react-js.png">
-                </div>
+                    <div class="project-card">ReactJs
+                        <img class="project-img" src="/src/assets/image/icons8-react-js.png">
+                    </div>
                 </a>
                 <!-- test-case-project -->
                 <a href="../portfolio/projectfile/testcases.html">
-                <div class="project-card">Testcases
-                    <img class="project-img" src="/src/assets/image/icons8-test.png" >
-                </div>
-                </a> 
-                  <!--  assignment -->
-                  <a href="/src/Project/assignment/assignment.html">
-                    <div class="project-card">Assignment
+                    <div class="project-card">Testcases
+                        <img class="project-img" src="/src/assets/image/icons8-test.png">
+                    </div>
+                </a>
+                <!--  assignment -->
+                <a href="/src/Project/assignment/assignment.html">
+                    <div class="project-card">Programing language
                         <img class="project-img" src="/src/assets/image/icon8-code-logo.png">
                     </div>
-                    </a>
+                </a>
             </div>
         </div>
         <!-- contact-container -->
         <div class="contact-container" id="Contact">
-            <b class="contact-title">Contact Me</b>
+            <b class="contact-title">Contact <span style="color: rgb(37, 200, 200);">Me</span></b>
+            <br/>
             <div class="contact-info">
-                <p><i class="fas fa-phone"></i><a class="number">96******61</a></p>
-                <p><i class="fas fa-map-marker-alt"></i><a class="address">Katol, Maharashtra</a></p>
-                <p><i class="fas fa-envelope"></i><a class="email" href="https://mail.google.com/mail/u/0/#inbox"> bondredivya12@gmail.com</a></p>
-                <p><i class="fab fa-github"></i><a class="github" href="https://github.com/DivyaFullStackDeveloper/Divya_html_Projects.git"> DivyaFullStackDeveloper</a></p>
-                <p><i class="fab fa-linkedin"></i><a class="linkedin" href="https://www.linkedin.com/feed/"> Linkedin</a></p>
+                <!-- <a class="number"><i class="fas fa-phone"></i>96******61</a>
+                <a class="address"> <i class="fas fa-map-marker-alt"></i>Katol, Maharashtra</a> -->
+                 
+                <div class="footer">    
+                <a class="email" href="https://mail.google.com/mail/u/0/#inbox"> <i
+                        class="fas fa-envelope"></i> </a>
+             
+               <a class="github"
+                        href="https://github.com/DivyaFullStackDeveloper/Divya_html_Projects.git">
+                        <i class="fab fa-github"></i>   </a> 
+                 <a class="linkedin" href="https://www.linkedin.com/feed/">
+                    <i class="fab fa-linkedin"></i>  </a> 
+                    <br/>
+                    <br/>
+                </div>   
             </div>
         </div>
     </div>
