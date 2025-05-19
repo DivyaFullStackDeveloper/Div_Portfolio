@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title> 
+    <!-- css link -->
+    <link rel="stylesheet" href="/src/Project/css/index1.css">
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- script -->
+    <script defer src="/src/Project/script1.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="logo"> Portfolio</h1>
+        <button class="menu-btn" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <nav class="navbar" id="navbar">
+            <a href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#Skill">Skill</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+    <!-- Home Section -->
+    <section id="Home" class="Home-container">
+        <h3>Hello, it's me </h3>
+        <br />
+        <h2>DIVYA BONDRE</h2>
+        <br />
+        <p> <b>And I'am Full-Stack Developer</b></p>
+        <br />
+        <br />
+        <img src="profile.jpg" alt="Profile" class="profile-logo" height="20px">
+    </section>
+
+    <!-- About-container -->
+    <div class="About-container" id="About">
+        <!-- <div class="about-image">
+        <img src="./assets/Dev2.avif" class="about-logo">
+    </div> -->
+        <div class="about-info">
+            <b class="about-title">About <span style="color: rgb(37, 200, 200);">Me</span></b>
+            <p class="info">
+                My name is Divya R Bondre, and I am a full-stack developer with a strong interest in front-end web
+                technologies. On the web development side, I've created interactive and responsive websites using
+                HTML
+                and CSS, as well as JavaScript frameworks like React.js. These projects reflect my attention to
+                detail
+                and commitment to creating beautiful, functional user interfaces.
+            </p>
+        </div>
+    </div>
+    <!-- skill-container -->
+    <div class="skills-section" id="Skill">
+        <h1 class="skill-title">My <span style="color: #4FBDBA;">Skills</span></h1>
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Semantic markup, accessibility, responsive design</p>
+            <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+          </div>
+    
+          <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Flexbox, Grid, animations, responsive layouts</p>
+            <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+          </div>
+    
+          <div class="skill-card">
+            <h3>JavaScript</h3>
+            <p>ES6+, DOM manipulation, async/await, promises</p>
+            <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+          </div>
+    
+          <div class="skill-card">
+            <h3>ReactJS </h3>
+            <p>Building optimized UIs using React with Vite for fast performance.</p>
+            <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+          </div>
+    
+          <div class="skill-card">
+            <h3>NodeJS</h3>
+            <p>Server-side development with NodeJS.</p>
+            <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+    <!--Project-container  -->
+    <div class="Projects-container" id="Projects">
+        <b class="project-title">My <span style="color: rgb(37, 200, 200);">Projects</span></b>
+        <div class="first-div">
+            <!-- html-project -->
+            <a href="/src/Project/html/html-folder.html">
+                <div class="project-card">HTML
+                    <img class="project-img" src="/src/assets/image/icons8-html.png">
+                </div>
+            </a>
+            <!-- css-project -->
+            <a href="/src/Project/css/css-folder.html">
+                <div class="project-card">CSS
+                    <img class="project-img" src="/src/assets/image/icons8-css.png">
+                </div>
+            </a>
+            <!-- javascript-project -->
+            <a href="/src/Project/javaScript/javScript-folder.html">
+                <div class="project-card">JavaScript
+                    <img class="project-img" src="/src/assets/image/ icon8-java1.png" >
+                </div>
+            </a>
+        </div>
+        <br />
+        <div class="second-div">
+            <!-- bootstrap-project -->
+            <a href="/src/Project/bootstrap/cake-web.html">
+                <div class="project-card">Bootstrap
+                    <img class="project-img" src="/src/assets/image/icons8-bootstrap1.png">
+                </div>
+            </a>
+            <!-- react-project -->
+            <a href="https://guileless-pavlova-7c3260.netlify.app/">
+                <div class="project-card">ReactJs
+                    <img class="project-img" src="/src/assets/image/icons8-react-js.png">
+                </div>
+            </a>
+            <!-- test-case-project -->
+            <a href="/src/Project/testcase/testcase-folder.html">
+                <div class="project-card">Testcases
+                    <img class="project-img" src="/src/assets/image/icons8-test.png">
+                </div>
+            </a>
+            <!--  assignment -->
+            <a href="/src/Project/assignment/assignment.html">
+                <div class="project-card">Programing language
+                    <img class="project-img" src="/src/assets/image/icon8-code-logo.png">
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-container" id="Contact">
+        <b class="contact-title">Contact <span style="color: rgb(37, 200, 200);">Me</span></b>
+        <br/>
+            <!-- <a class="number" href="tel:9699967561"><i class="fas fa-phone"></i></a> -->
+            <!-- <a class="address"> <i class="fas fa-map-marker-alt"></i>Katol, Maharashtra</a> -->
+             
+            <div class="footer">    
+            <a class="email" href="https://mail.google.com/mail/u/0/#inbox"> <i
+                    class="fas fa-envelope"></i> </a>
+         
+           <a class="github"
+                    href="https://github.com/DivyaFullStackDeveloper/Divya_html_Projects.git">
+                    <i class="fab fa-github"></i>   </a> 
+             <a class="linkedin" href="https://www.linkedin.com/feed/">
+                <i class="fab fa-linkedin"></i>  </a> 
+                <br/>
+                <br/>
+            </div>   
+        </div>
+    </div>
+</body>
+
+</html>
