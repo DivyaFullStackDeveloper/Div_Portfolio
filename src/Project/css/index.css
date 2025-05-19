@@ -1,52 +1,83 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     height: 100vh;
     font-family: Arial, sans-serif;
-}
-html{
+} */
+/* html{
     scroll-behavior: smooth;
-}
-.main-container {
+} */
+/* .main-container {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(to right, #072227,#001C30, #040D12, #001C30);
-}
+} */
 
+
+/* main styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    color: white;
+}
+/* dody styling */
+body{
+    background: linear-gradient(to right, #072227,#001C30, #040D12, #001C30);
+    color: white;
+}
 /*  header styling  */
 .header {
     width: 100%;
     height:6%;
     background: linear-gradient(to left, #072227, #040D12, #001C30);
-    font-size: 30px;
-    text-align:right;
-    z-index: 1000;
     position: fixed;
-    padding: 15px 0;
+    padding:  2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    left: 0;
+    top: 0;
 }
 
 .file-name {
     color: #EDDFE0;
     font-size: 35px;
-    text-align: center;
-    margin-right: 350px;
-    font-weight: 80px;
+    font-weight: 800;
+    cursor: default;
 }
+/* .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: linear-gradient(to left, #072227, #040D12, #001C30);
+} */
 
-.navbar {
-    font-size: 20px;
+.navbar.active {
+    display: block;
+}
+.navbar a {
+    font-size: 25px;
     color: #EDDFE0; 
-    text-decoration: none;
-    margin: 0 20px;
-    margin-left: 100px; 
-    transition: .3s; 
-    gap: 20%;
+    margin-left: 4rem;
+   
 }
-
-.navbar:hover{
+.navbar a:hover{
     color: #4FBDBA;
 }
-
+ 
+#menu-icon{
+    font-size: 20px;
+    color: #EDDFE0; 
+    display: none;
+}
 /* home container styling   */
 .Home-container {
     display: flex;
@@ -57,18 +88,19 @@ html{
 }
 .main-title {
     color: #FBFBFB;
-    margin-left: 50px;
+    margin-left: 130px;
     font-size: 30px;
 }
 h2{
-    color: FBFBFB;
-    margin-left: 50px;
+     
+    margin-left: 90px;
     font-size: 33px;
     color: rgb(37, 200, 200);;
 }
  .web-title{
     font-size: 30px;
     color: white;
+    margin-right:20px;
  }
  
 .res-button {
@@ -251,9 +283,34 @@ img {
  }
  .linkedin{
     text-decoration: none;
-    color: white;
+    color: #35858B; 
  } 
   .footer{
     font-size: 30px;
      margin-left: 40px;
   }
+
+  /* media query of nav */
+
+  @media (max-width: 768px){
+    #menu-icon{
+        display: block;
+    }
+
+   .navbar {
+         position:absolute;
+         top: 10px;
+         left: 0;
+         width: 100%;
+         padding: 1rem 3%;
+         
+         border-top: .1rem solid white;
+         box-shadow: 0.5 rem 1rem white;
+
+   }
+   .navbar a{
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+   }
+}                                          
