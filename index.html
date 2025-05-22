@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title> 
-    <!-- css link -->
-    <link rel="stylesheet" href="/src/Project/css/index.css">
-    <!-- icon link -->
+    <title>Divya Bondre - Portfolio</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- script -->
-    <script defer src="/src/Project/script1.js"></script>
+    <link rel="stylesheet" href="./src/Project/css/index.css">
+    <link rel="stylesheet" href="./src/Project/script.js">
 </head>
 
 <body>
     <!-- Header Section -->
     <header class="header">
-        <h1 class="logo"> Portfolio</h1>
+        <h1 class="logo">Portfolio</h1>
         <button class="menu-btn" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -28,149 +22,146 @@
         <nav class="navbar" id="navbar">
             <a href="#Home">Home</a>
             <a href="#About">About</a>
-            <a href="#Skill">Skill</a>
+            <a href="#Skill">Skills</a>
             <a href="#Projects">Projects</a>
             <a href="#Contact">Contact</a>
         </nav>
     </header>
+
     <!-- Home Section -->
     <section id="Home" class="Home-container">
-        <h3>Hello, it's me </h3>
-        <br />
-        <h2>DIVYA BONDRE</h2>
-        <br />
-        <p> <b>And I'am Full-Stack Developer</b></p>
-        <br />
-        <br />
-        <img src="profile.jpg" alt="Profile" class="profile-logo" height="20px">
+        <div class="home-info">
+            <h3>Hello, it's me</h3>
+            <h2>DIVYA BONDRE</h2>
+            <p>I'm a Full-Stack Developer</p>
+        </div>
+        <div class="home-logo">
+            <img src="/api/placeholder/350/350" alt="Profile" class="profile-logo">
+        </div>
     </section>
 
-    <!-- About-container -->
-    <div class="About-container" id="About">
-        <!-- <div class="about-image">
-        <img src="./assets/Dev2.avif" class="about-logo">
-    </div> -->
-        <div class="about-info">
-            <b class="about-title">About <span style="color: rgb(37, 200, 200);">Me</span></b>
-            <p class="info">
-                My name is Divya R Bondre, and I am a full-stack developer with a strong interest in front-end web
-                technologies. On the web development side, I've created interactive and responsive websites using
-                HTML
-                and CSS, as well as JavaScript frameworks like React.js. These projects reflect my attention to
-                detail
-                and commitment to creating beautiful, functional user interfaces.
-            </p>
+    <!-- About Section -->
+    <section class="About-container" id="About">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/api/placeholder/280/280" alt="About Profile" class="about-logo">
+            </div>
+            <div class="about-info">
+                <h2 class="about-title">About <span>Me</span></h2>
+                <p class="info">
+                    I'm <strong>Divya R Bondre</strong>, a passionate <strong>Full-Stack Developer</strong> with a strong focus on
+                    front-end web development. I enjoy building visually appealing and highly functional websites using
+                    <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and frameworks like
+                    <strong>React.js</strong>. I love translating ideas into elegant digital experiences and continuously learning
+                    new technologies to improve my craft.
+                </p>
+                <a href="#" class="cv-button">Download CV</a>
+            </div>
         </div>
-    </div>
-    <!-- skill-container -->
-    <div class="skills-section" id="Skill">
-        <h1 class="skill-title">My <span style="color: #4FBDBA;">Skills</span></h1>
-        <div class="skill-grid">
-          <div class="skill-card">
-            <h3>HTML</h3>
-            <p>Semantic markup, accessibility, responsive design</p>
-            <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
-          </div>
-    
-          <div class="skill-card">
-            <h3>CSS</h3>
-            <p>Flexbox, Grid, animations, responsive layouts</p>
-            <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
-          </div>
-    
-          <div class="skill-card">
-            <h3>JavaScript</h3>
-            <p>ES6+, DOM manipulation, async/await, promises</p>
-            <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
-          </div>
-    
-          <div class="skill-card">
-            <h3>ReactJS </h3>
-            <p>Building optimized UIs using React with Vite for fast performance.</p>
-            <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
-          </div>
-    
-          <div class="skill-card">
-            <h3>NodeJS</h3>
-            <p>Server-side development with NodeJS.</p>
-            <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
-          </div>
-        </div>
-      </div>
+    </section>
 
-    <!--Project-container  -->
-    <div class="Projects-container" id="Projects">
-        <b class="project-title">My <span style="color: rgb(37, 200, 200);">Projects</span></b>
-        <div class="first-div">
-            <!-- html-project -->
-            <a href="/src/Project/html/html-folder.html">
-                <div class="project-card">HTML
-                    <img class="project-img" src="/src/assets/image/icons8-html.png">
+    <!-- Skills Section -->
+    <section id="Skill" class="skills-section">
+        <h1 class="skill-title">My <span>Skills</span></h1>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <img src="./src/assets/image/icons8-html.png" alt="HTML" class="skill-icon">
+                <h3>HTML</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;">90%</div>
                 </div>
+            </div>
+        
+            <div class="skill-card">
+                <img src="./src/assets/image/icons8-css.png" alt="CSS" class="skill-icon">
+                <h3>CSS</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;">85%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="./src/assets/image/icon8-java2.png" alt="JavaScript" class="skill-icon">
+                <h3>JavaScript</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;">85%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="./src/assets/image/icons8-react-js.png" alt="React" class="skill-icon">
+                <h3>ReactJS</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;">80%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="./src/assets/image/icons8-nodejs.png" alt="NodeJS" class="skill-icon">
+                <h3>NodeJS</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%;">75%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="Projects-container " id="Projects">
+        <h1 class="project-title">My <span>Projects</span></h1>
+        <div class="project-grid">
+            <a href="./src/Project/html/html-folder.html" class="project-card">
+                <img src="./src/assets/image/icons8-html.png" alt="HTML" class="project-img">
+                <h3>HTML Projects</h3>
+                <p>Semantic markup, accessibility, responsive design</p>
             </a>
-            <!-- css-project -->
-            <a href="/src/Project/css/css-folder.html">
-                <div class="project-card">CSS
-                    <img class="project-img" src="/src/assets/image/icons8-css.png">
-                </div>
+
+            <a href="./src/Project/css/css-folder.html" class="project-card">
+                <img src="./src/assets/image/icons8-css.png" alt="CSS" class="project-img">
+                <h3>CSS Projects</h3>
+                <p>Flexbox, Grid, animations, responsive layouts</p>
             </a>
-            <!-- javascript-project -->
-            <a href="/src/Project/javaScript/javScript-folder.html">
-                <div class="project-card">JavaScript
-                    <img class="project-img" src="/src/assets/image/ icon8-java1.png" >
-                </div>
+
+            <a href="./src/Project/javaScript/javScript-folder.html" class="project-card">
+                <img src="./src/assets/image/icon8-java2.png" alt="JavaScript" class="project-img">
+                <h3>JavaScript Projects</h3> 
+                <p>ES6+, DOM manipulation, async/await, promises</p>
+            </a>
+
+            <a href="./src/Project/bootstrap/cake-web.html" class="project-card">
+                <img src="./src/assets/image/icons8-bootstrap1.png" alt="Bootstrap" class="project-img">
+                <h3>Bootstrap Projects</h3>
+            </a>
+
+            <a href="https://guileless-pavlova-7c3260.netlify.app/" class="project-card">
+                <img src="./src/assets/image/icons8-react-js.png" alt="React" class="project-img">
+                <h3>React Projects</h3>
+                <p>Building optimized UIs using React with Vite</p>
+            </a>
+
+            <a href="#" class="project-card">
+                <img src="./src/assets/image/icons8-test.png" alt="Testing" class="project-img">
+                <h3>Test Cases</h3>
             </a>
         </div>
-        <br />
-        <div class="second-div">
-            <!-- bootstrap-project -->
-            <a href="/src/Project/bootstrap/cake-web.html">
-                <div class="project-card">Bootstrap
-                    <img class="project-img" src="/src/assets/image/icons8-bootstrap1.png">
-                </div>
-            </a>
-            <!-- react-project -->
-            <a href="https://guileless-pavlova-7c3260.netlify.app/">
-                <div class="project-card">ReactJs
-                    <img class="project-img" src="/src/assets/image/icons8-react-js.png">
-                </div>
-            </a>
-            <!-- test-case-project -->
-            <a href="/src/Project/testcase/testcase-folder.html">
-                <div class="project-card">Testcases
-                    <img class="project-img" src="/src/assets/image/icons8-test.png">
-                </div>
-            </a>
-            <!--  assignment -->
-            <a href="/src/Project/assignment/assignment.html">
-                <div class="project-card">Programing language
-                    <img class="project-img" src="/src/assets/image/icon8-code-logo.png">
-                </div>
-            </a>
-        </div>
-    </div>
+    </section>
 
     <!-- Contact Section -->
-    <div class="contact-container" id="Contact">
-        <b class="contact-title">Contact <span style="color: rgb(37, 200, 200);">Me</span></b>
-        <br/>
-            <!-- <a class="number" href="tel:9699967561"><i class="fas fa-phone"></i></a> -->
-            <!-- <a class="address"> <i class="fas fa-map-marker-alt"></i>Katol, Maharashtra</a> -->
-             
-            <div class="footer">    
-            <a class="email" href="https://mail.google.com/mail/u/0/#inbox"> <i
-                    class="fas fa-envelope"></i> </a>
-         
-           <a class="github"
-                    href="https://github.com/DivyaFullStackDeveloper/Divya_html_Projects.git">
-                    <i class="fab fa-github"></i>   </a> 
-             <a class="linkedin" href="https://www.linkedin.com/feed/">
-                <i class="fab fa-linkedin"></i>  </a> 
-                <br/>
-                <br/>
-            </div>   
+    <section class="contact-container" id="Contact">
+        <h1 class="contact-title">Contact <span>Me</span></h1>
+        <div class="footer">
+            <a href="mailto:your.email@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/your-username" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
-    </div>
-</body>
+    </section>
 
+     
+</body>
 </html>
