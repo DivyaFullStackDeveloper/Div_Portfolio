@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Finder</title>
+    <link rel="stylesheet" href="../Javascript/Array.css">
+    <style>
+        body {
+            background-color: white;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            height: 30vh;
+            width: 20vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: gray;
+        }
+        h1{
+            color: #333446;
+        }
+        input {
+            width: 90%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        button {
+            background-color: lightblue;
+            margin-top: 10px;
+            border-radius: 10px;
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Find Day</h1>
+        <input type="number" id="dayInput" placeholder="Enter day number (1-7)" min="1" max="7">
+        <button onclick="showDay()">Get Day</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function showDay() {
+            const dayInput = document.getElementById("dayInput").value;
+            const result = document.getElementById("result");
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            if (dayInput >= 1 && dayInput <= 7) {
+                result.textContent = "The day is: " + days[dayInput - 1];
+            } else {
+                result.textContent = "Invalid day number. Please enter a number between 1 and 7.";
+            }
+        }
+    </script>
+</body>
+
+</html>

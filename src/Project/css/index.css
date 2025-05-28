@@ -15,7 +15,7 @@ body {
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     color: white;
     height: 1.6;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* Header Styles */
@@ -104,7 +104,9 @@ body {
     min-height: 100vh;
     gap: 60px;
     flex-wrap: wrap;
-    background-color:linear-gradient(to right, #072227,#001C30, #040D12, #001C30); ;
+    background: linear-gradient(to right, #072227,#001C30, #040D12, #001C30);
+
+    /* background-color:linear-gradient(to right, #072227,#001C30, #040D12, #001C30); ; */
 }
 
 .home-info {
@@ -115,13 +117,15 @@ body {
 
 .home-info h3 {
     font-size: 24px;
-    color: #4FBDBA;
+    color: white;
+    /* color: #4FBDBA; */
     margin-bottom: 10px;
     opacity: 0.9;
 }
 
 .home-info h2 {
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: 40px;
     font-weight: 500;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #4FBDBA, #35858B);
@@ -175,14 +179,14 @@ body {
     animation: slideInRight 1s ease-out;
 }
 .profile-logo {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #4FBDBA;
     box-shadow: 0 10px 30px rgba(79, 189, 186, 0.3);
     transition: all 0.3s ease;
-    animation: float 6s ease-in-out infinite;
+    /* animation: float 6s ease-in-out infinite; */
 }
 
 .profile-logo:hover {
