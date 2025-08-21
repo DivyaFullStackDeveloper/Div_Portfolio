@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Hunt - Enhanced Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screen {
+            width: 320px;
+            height: 480px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 25px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .screen:hover {
+            transform: translateY(-5px);
+        }
+
+        .screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            border-radius: 25px 25px 0 0;
+        }
+
+        .screen-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .screen-title {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(145deg, #ff9a9e, #fecfef);
+        }
+
+        .bunny-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .bunny {
+            font-size: 120px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .play-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .play-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Game Screen */
+        .game-screen {
+            background: linear-gradient(145deg, #a8edea, #fed6e3);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .number-tile {
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        .number-tile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            background: linear-gradient(145deg, #f0f8ff, #e6f3ff);
+        }
+
+        .timer {
+            background: linear-gradient(45deg, #feca57, #ff9ff3);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Memory Grid Screen */
+        .memory-screen {
+            background: linear-gradient(145deg, #d299c2, #fef9d7);
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .memory-tile {
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, #ff9ff3, #feca57);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-tile::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .memory-tile:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .memory-tile:hover::before {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Bottom Controls */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .control-btn {
+            background: linear-gradient(45deg, #48dbfb, #0abde3);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(72, 219, 251, 0.3);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(72, 219, 251, 0.4);
+        }
+
+        .control-btn.secondary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .control-btn.secondary:hover {
+            box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Screen Labels */
+        .screen-label {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.9);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                gap: 20px;
+            }
+            
+            .screen {
+                width: 280px;
+                height: 420px;
+                padding: 20px;
+            }
+        }
+
+        /* Game Won Screen */
+        .won-screen {
+            background: linear-gradient(145deg, #84fab0, #8fd3f4);
+            text-align: center;
+        }
+
+        .celebration {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: celebrate 1s infinite alternate;
+        }
+
+        @keyframes celebrate {
+            from { transform: scale(1) rotate(0deg); }
+            to { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .score-display {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .score-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2d3436;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="screen welcome-screen">
+        <div class="screen-label">Desktop - 1</div>
+        <div class="screen-header">
+            <h1 class="screen-title">Memory Hunt</h1>
+            <p class="subtitle">Memorize the numbers,<br>then select them in order!</p>
+        </div>
+        
+        <div class="bunny-container">
+            <div class="bunny">🐰</div>
+        </div>
+        
+        <button class="play-btn">Let's Play!</button>
+    </div>
+
+    <!-- Number Display Screen -->
+    <div class="screen game-screen">
+        <div class="screen-label">Desktop - 2</div>
+        <div class="screen-header">
+            <h2 class="screen-title">See and remember the numbers!</h2>
+        </div>
+        
+        <div class="game-grid">
+            <div class="number-tile">2</div>
+            <div class="number-tile">8</div>
+            <div class="number-tile">5</div>
+            <div class="number-tile">4</div>
+            <div class="number-tile">1</div>
+            <div class="number-tile">3</div>
+            <div class="number-tile">7</div>
+            <div class="number-tile">6</div>
+            <div class="number-tile">9</div>
+        </div>
+        
+        <div class="bunny-container">
+            <div class="bunny" style="font-size: 80px;">🐰</div>
+        </div>
+        
+        <div class="timer">Time: 10</div>
+    </div>
+
+    <!-- Memory Test Screen -->
+    <div class="screen memory-screen">
+        <div class="screen-label">Desktop - 3</div>
+        <div class="screen-header">
+            <h2 class="screen-title">Click numbers in order!</h2>
+        </div>
+        
+        <div class="memory-grid">
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+        </div>
+        
+        <div class="bunny-container">
+            <div class="bunny" style="font-size: 80px;">🐰</div>
+        </div>
+        
+        <div class="timer">Time: 10</div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div class="screen memory-screen">
+        <div class="screen-label">Desktop - 4</div>
+        <div class="screen-header">
+            <h2 class="screen-title">What? Oops! Game Over!</h2>
+        </div>
+        
+        <div class="memory-grid">
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+            <div class="memory-tile"></div>
+        </div>
+        
+        <div class="bunny-container">
+            <div class="bunny" style="font-size: 80px;">🐰</div>
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn">Time out</button>
+            <button class="control-btn secondary">Play again</button>
+        </div>
+    </div>
+
+    <!-- You Won Screen -->
+    <div class="screen won-screen">
+        <div class="screen-label">Desktop - 5</div>
+        <div class="screen-header">
+            <h2 class="screen-title">You Won! 🎉</h2>
+        </div>
+        
+        <div class="celebration">🏆</div>
+        
+        <div class="score-display">
+            <div>Your Score</div>
+            <div class="score-number">2,847</div>
+        </div>
+        
+        <div class="game-grid">
+            <div class="number-tile">2</div>
+            <div class="number-tile">8</div>
+            <div class="number-tile">5</div>
+            <div class="number-tile">4</div>
+            <div class="number-tile">1</div>
+            <div class="number-tile">3</div>
+            <div class="number-tile">7</div>
+            <div class="number-tile">6</div>
+            <div class="number-tile">9</div>
+        </div>
+        
+        <div class="bunny-container">
+            <div class="bunny" style="font-size: 60px;">🐰</div>
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn">Time: 10</button>
+            <button class="control-btn secondary">Play again</button>
+        </div>
+    </div>
+</body>
+</html>

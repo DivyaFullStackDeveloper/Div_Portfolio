@@ -1,15 +1,21 @@
-// Mobile menu toggle
-function toggleMenu() {
-    const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('active');
-}
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.navbar a').forEach(link => {
+function toggleMenu() {
+    const menuBtn = document.querySelector('.menu-btn');
+    const navbar = document.getElementById('navbar');
+
+    // Toggle active class
+    menuBtn.classList.toggle('active'); // animate hamburger
+    navbar.classList.toggle('active'); // show/hide navbar
+  }
+
+  // Close menu when a link is clicked (optional)
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        document.getElementById('navbar').classList.remove('active');
+      document.querySelector('.menu-btn').classList.remove('active');
+      document.getElementById('navbar').classList.remove('active');
     });
-});
+  });
 
 // Add scroll effect to header
 window.addEventListener('scroll', () => {
